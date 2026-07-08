@@ -1,0 +1,15 @@
+COMMENT MODIFIER TON SITE PLUS TARD
+====================================
+
+Tout ton site tient dans le fichier "index.html".
+Pour changer un texte, un prix, un lien :
+
+1. Sur GitHub, dans ton depot eds-formation, clique sur "index.html"
+2. Clique sur l'icone crayon (Edit) en haut a droite
+3. Modifie ce que tu veux
+4. En bas : bouton vert "Commit changes"
+5. Ton site se met a jour tout seul en 1-2 minutes.
+
+Les images et podcasts (dossier "assets" a venir) :
+tant qu'ils sont chez Manus (adresses cloudfront.net dans index.html),
+NE SUPPRIME PAS le projet Manus. On les rapatriera ensemble.
