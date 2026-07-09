@@ -20,6 +20,11 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Formation IA & Automatisation pour PME | EDS Issoudun" />
   <meta name="twitter:description" content="Formations IA sur-mesure, diagnostic CADRE, automatisation. 100+ PME formées. Réservez votre diagnostic gratuit." />
+  <meta name="geo.region" content="FR-36" />
+  <meta name="geo.placename" content="Issoudun" />
+  <meta name="classification" content="Formation IA, ChatGPT, automatisation, accompagnement IA pour PME, artisans et commerçants" />
+  <meta name="coverage" content="Issoudun, Châteauroux, Bourges, Indre, Cher, Berry, Centre-Val de Loire" />
+  <meta name="target" content="PME, artisans, commerçants, indépendants, organismes de formation, collectivités locales" />
   <link rel="icon" type="image/png" href="/assets/favicon-eds.png" />
   <link rel="apple-touch-icon" href="/assets/favicon-eds.png" />
 
@@ -27,30 +32,141 @@
 <script src="/vendor/react-dom.production.min.js"></script>
 <script src="/support.js"></script>
 
-<!-- Schema.org: LocalBusiness + Organization -->
+<!-- Schema.org: LocalBusiness + ProfessionalService -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": "https://eds-formation.fr",
+  "@type": ["LocalBusiness", "ProfessionalService"],
+  "@id": "https://eds-formation.fr/#business",
   "name": "EDS — Escale Digitale Solutions",
   "alternateName": "Escale Digitale Solutions",
-  "description": "Formation et accompagnement IA pour PME et ETI. Diagnostic de gouvernance IA (CADRE), formations sur-mesure, automatisation des processus.",
+  "description": "Formation et accompagnement IA pour PME, artisans, commerçants et indépendants. Diagnostic de gouvernance IA (CADRE), formations ChatGPT et IA générative sur-mesure, automatisation des processus. Basé à Issoudun (Indre), interventions dans le Berry et en Centre-Val de Loire.",
   "url": "https://eds-formation.fr",
   "email": "escale.digitale.solutions@gmail.com",
+  "founder": {
+    "@type": "Person",
+    "name": "Florian Rousseau",
+    "jobTitle": "Fondateur, formateur et consultant IA",
+    "sameAs": ["https://www.linkedin.com/in/escaledigitalesolutions/"]
+  },
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Issoudun",
     "addressLocality": "Issoudun",
     "postalCode": "36100",
-    "addressCountry": "FR",
-    "addressRegion": "Centre-Val de Loire"
+    "addressRegion": "Centre-Val de Loire",
+    "addressCountry": "FR"
   },
-  "areaServed": [{"@type": "AdministrativeArea", "name": "Centre-Val de Loire"}, {"@type": "AdministrativeArea", "name": "France"}],
+  "areaServed": [
+    {"@type": "AdministrativeArea", "name": "Indre"},
+    {"@type": "AdministrativeArea", "name": "Cher"},
+    {"@type": "AdministrativeArea", "name": "Berry"},
+    {"@type": "AdministrativeArea", "name": "Centre-Val de Loire"},
+    {"@type": "Country", "name": "France"},
+    {"@type": "City", "name": "Issoudun"},
+    {"@type": "City", "name": "Châteauroux"},
+    {"@type": "City", "name": "Déols"},
+    {"@type": "City", "name": "Le Poinçonnet"},
+    {"@type": "City", "name": "Saint-Maur"},
+    {"@type": "City", "name": "Le Blanc"},
+    {"@type": "City", "name": "La Châtre"},
+    {"@type": "City", "name": "Argenton-sur-Creuse"},
+    {"@type": "City", "name": "Buzançais"},
+    {"@type": "City", "name": "Valençay"},
+    {"@type": "City", "name": "Levroux"},
+    {"@type": "City", "name": "Ardentes"},
+    {"@type": "City", "name": "Villedieu-sur-Indre"},
+    {"@type": "City", "name": "Neuvy-Saint-Sépulchre"},
+    {"@type": "City", "name": "Éguzon-Chantôme"},
+    {"@type": "City", "name": "Bourges"},
+    {"@type": "City", "name": "Vierzon"},
+    {"@type": "City", "name": "Saint-Amand-Montrond"},
+    {"@type": "City", "name": "Saint-Doulchard"},
+    {"@type": "City", "name": "Saint-Germain-du-Puy"},
+    {"@type": "City", "name": "Mehun-sur-Yèvre"},
+    {"@type": "City", "name": "Saint-Florent-sur-Cher"},
+    {"@type": "City", "name": "Avord"},
+    {"@type": "City", "name": "Sancerre"},
+    {"@type": "City", "name": "Aubigny-sur-Nère"},
+    {"@type": "City", "name": "La Guerche-sur-l'Aubois"},
+    {"@type": "City", "name": "Dun-sur-Auron"},
+    {"@type": "City", "name": "Henrichemont"},
+    {"@type": "City", "name": "Baugy"},
+    {"@type": "City", "name": "Trouy"},
+    {"@type": "Place", "name": "Bas-Berry"},
+    {"@type": "Place", "name": "Haut-Berry"},
+    {"@type": "Place", "name": "Champagne berrichonne"},
+    {"@type": "Place", "name": "Boischaut Nord"},
+    {"@type": "Place", "name": "Boischaut Sud"},
+    {"@type": "Place", "name": "Brenne"},
+    {"@type": "Place", "name": "Sancerrois"},
+    {"@type": "Place", "name": "Pays-Fort"},
+    {"@type": "Place", "name": "Sologne berrichonne"}
+  ],
   "priceRange": "€€",
-  "sameAs": ["https://www.linkedin.com/in/florian-rousseau"],
-  "aggregateRating": {"@type": "AggregateRating", "ratingValue": "5", "ratingCount": "100"},
-  "knowsAbout": ["Intelligence Artificielle", "Formation IA", "Automatisation", "Gouvernance IA", "Conformité AI Act", "n8n", "Make", "Google Workspace"]
+  "sameAs": ["https://www.linkedin.com/in/escaledigitalesolutions/"],
+  "knowsAbout": ["Intelligence Artificielle", "IA générative", "Formation IA", "ChatGPT", "Prompt engineering", "Automatisation des processus", "Automatisation no-code", "Gouvernance IA", "Conformité AI Act", "RGPD appliqué à l'IA", "n8n", "Make", "Google Workspace"],
+  "serviceType": ["Formation IA", "Formation ChatGPT", "Prompt engineering", "Automatisation des processus", "Automatisation administrative", "Automatisation no-code", "Diagnostic IA", "Gouvernance IA", "Accompagnement IA sur-mesure", "IA pour PME", "IA pour artisans", "IA pour commerçants", "Sensibilisation aux risques de l'IA", "Usage professionnel de ChatGPT", "Intégration de l'IA générative en entreprise"],
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "PME, TPE, artisans, commerçants, indépendants, organismes de formation, collectivités locales",
+    "geographicArea": {"@type": "AdministrativeArea", "name": "Centre-Val de Loire"}
+  },
+  "keywords": "formation IA Issoudun, formation ChatGPT Indre, formation IA Châteauroux, formation IA Bourges, automatisation PME Berry, consultant IA Centre-Val de Loire, diagnostic IA, gouvernance IA, prompt engineering",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Formations et accompagnement IA",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {"@type": "Service", "name": "Formation IA sur-mesure", "description": "Sensibilisation à l'IA générative, usage professionnel de ChatGPT, intégration de l'IA aux métiers, prompt engineering. En présentiel dans l'entreprise, sur les documents réels des équipes."}
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {"@type": "Service", "name": "Automatisation des processus", "description": "Automatisation administrative et no-code des tâches répétitives (e-mails, comptes-rendus, veille, reporting) avec des outils comme n8n et Make."}
+      },
+      {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR",
+        "itemOffered": {"@type": "Service", "name": "Diagnostic CADRE — Gouvernance IA", "description": "Diagnostic de maturité et de gouvernance IA en 15 questions et 5 minutes : score sur 30, risques prioritaires, plan d'action 30-60-90 jours. Gratuit, sans inscription."}
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {"@type": "Service", "name": "Conformité et pilotage IA", "description": "Pack Conformité IA (charte d'usage, registre des usages, classification AI Act, plan de formation) et pilotage continu avec veille réglementaire."}
+      }
+    ]
+  }
+}
+</script>
+
+<!-- Schema.org: WebPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://eds-formation.fr/#webpage",
+  "url": "https://eds-formation.fr",
+  "name": "Formation IA & Automatisation PME | EDS Issoudun",
+  "description": "Formation IA sur-mesure, diagnostic de gouvernance IA (CADRE) gratuit et automatisation des processus pour les PME, artisans et commerçants de l'Indre, du Cher, du Berry et du Centre-Val de Loire.",
+  "inLanguage": "fr-FR",
+  "about": {"@id": "https://eds-formation.fr/#business"},
+  "mainEntity": {"@id": "https://eds-formation.fr/#business"},
+  "keywords": "formation IA, formation ChatGPT, automatisation des processus, intelligence artificielle générative pour PME, accompagnement IA en Indre, accompagnement IA dans le Cher, accompagnement IA dans le Berry",
+  "mentions": [
+    {"@type": "Person", "name": "Florian Rousseau"},
+    {"@type": "Organization", "name": "EDS — Escale Digitale Solutions"},
+    {"@type": "City", "name": "Issoudun"},
+    {"@type": "City", "name": "Châteauroux"},
+    {"@type": "City", "name": "Bourges"},
+    {"@type": "AdministrativeArea", "name": "Indre"},
+    {"@type": "AdministrativeArea", "name": "Cher"},
+    {"@type": "AdministrativeArea", "name": "Berry"},
+    {"@type": "AdministrativeArea", "name": "Centre-Val de Loire"},
+    {"@type": "Thing", "name": "Formation IA"},
+    {"@type": "Thing", "name": "Formation ChatGPT"},
+    {"@type": "Thing", "name": "Automatisation des processus"},
+    {"@type": "Thing", "name": "Intelligence artificielle générative"}
+  ]
 }
 </script>
 
@@ -61,8 +177,8 @@
   "@type": "Service",
   "name": "Formation IA sur-mesure",
   "description": "Formations en intelligence artificielle adaptées à votre entreprise. Sensibilisation, intégration métier, automatisation des processus.",
-  "provider": {"@type": "LocalBusiness", "name": "EDS — Escale Digitale Solutions", "url": "https://eds-formation.fr"},
-  "areaServed": "Centre-Val de Loire",
+  "provider": {"@id": "https://eds-formation.fr/#business"},
+  "areaServed": [{"@type": "AdministrativeArea", "name": "Indre"}, {"@type": "AdministrativeArea", "name": "Cher"}, {"@type": "AdministrativeArea", "name": "Berry"}, {"@type": "AdministrativeArea", "name": "Centre-Val de Loire"}],
   "availableLanguage": "fr"
 }
 </script>
@@ -74,10 +190,10 @@
   "@type": "Service",
   "name": "Diagnostic CADRE — Gouvernance IA",
   "description": "Diagnostic de maturité IA en 15 questions, 5 minutes. Score sur 30, verdict immédiat, plan d'action 30-60-90 jours. Gratuit, sans inscription.",
-  "provider": {"@type": "LocalBusiness", "name": "EDS — Escale Digitale Solutions", "url": "https://eds-formation.fr"},
+  "provider": {"@id": "https://eds-formation.fr/#business"},
   "price": "0",
   "priceCurrency": "EUR",
-  "areaServed": "Centre-Val de Loire"
+  "areaServed": [{"@type": "AdministrativeArea", "name": "Indre"}, {"@type": "AdministrativeArea", "name": "Cher"}, {"@type": "AdministrativeArea", "name": "Berry"}, {"@type": "AdministrativeArea", "name": "Centre-Val de Loire"}]
 }
 </script>
 
