@@ -1,0 +1,34 @@
+/* EDS: white page surfaces, requested by the site owner. */
+:root{--cream:#fff;--paper:#fff}
+html,body,.site-header,.main-nav.open,.mobile-sticky{background:#fff}
+body main>section,body main>aside,.site-footer{background:#fff}
+.tr-course,.tr-hero-aside,.tr-final,.tool-display,.tool-document,.tool-text,
+.course-objective,.course-example,.support-process,.support-mini-flow,
+.contact-primary,.contact-route,.contact-route-booking,.contact-route:hover,
+.card,.dark-section .card,.offer-card,.review-section,.review-card,
+.cta-panel,.form-feedback,input,select,textarea,.snapshot-round,
+.snapshot-print,.portrait-label,.training-detail,.founder-portrait,
+.of-course:hover,.of-course[open],.of-route-section,
+.guide-table-wrap tbody tr:nth-child(even){background:#fff}
+/* Preserve readable ink wherever a former dark panel becomes white. */
+.tr-ink,.tr-final,.support-process,.contact-primary,.site-footer,.dark-section{color:#0b2b30}
+:is(.tr-ink,.tr-final,.support-process,.contact-primary,.site-footer,.dark-section) :is(p,h2,h3,h4,li,summary,strong,a:not(.button),span){color:#0b2b30}
+.tr-ink .tr-course-name,.tr-ink .tr-course-name>span,.tr-ink .tr-small-label,
+.tr-ink .tr-program>.tr-program-content,.tr-ink .tr-program-content li,
+.tr-ink .tr-takeaway>p,.tr-ink .tr-takeaway>p.tr-course-note,
+.tr-ink .text-link,.tr-ink .tr-audio>p>span,.tr-ink .tr-transcript>p,
+.tr-ink .tr-detail-link{color:#0b2b30}
+.site-footer .footer-brand p,.site-footer .footer-col h2,.footer-registration,
+.footer-registration p:last-child,.footer-bottom,.footer-col>p{color:#43585b!important}
+.site-footer{border-top:1px solid #d9e0df}
+.site-footer .footer-registration,.site-footer .footer-bottom{border-color:#d9e0df}
+.site-footer .back-top{border-color:#9baead;color:#0b2b30}
+.support-handoff li:before{color:#43585b}
+/* Buttons and the coloured 3D illustrations retain their functional accents. */
+.button,.button *{color:#fff}
+.button.amber,.button.amber *,.button.secondary,.button.secondary *{color:#0b2b30}
+.tr-course-contact:hover{color:#fff}
+.tr-final .eyebrow,.tr-final p:not(.eyebrow),.support-process .eyebrow,
+.support-process .support-heading>p,.support-handoff .support-small-label,
+.support-handoff li,.contact-primary p,.contact-primary .eyebrow,
+.dark-section .lead,.dark-section p,.dark-section .tag,.dark-section .number{color:#43585b}
