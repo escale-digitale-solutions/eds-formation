@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Méthode EDS — prototype scène éclatée</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap">
+<style>
+/* Prototype du vocabulaire « E1 — Scène éclatée » appliqué à la tuile du logo EDS.
+   Mécanique reprise de la référence énergîte (prise connectée) : piste haute + scène collante,
+   progression du défilement lissée, variables CSS écrites sur la scène, chapitres en fondu,
+   légendes tracées. Différences : vraie 3D CSS (preserve-3d) au lieu d'images détourées,
+   piste 3,4 écrans au lieu de 6,8, colonne de texte réservée, contenu lisible sans JS. */
+:root{
+  --ink:#05242D; --brand:#093746; --brand-600:#0F4454; --accent:#FFA62B; --cream:#F4F1EA;
+  --d-muted:#A9BEC3; --bg:#FAF8F4;
+  --ease-out:cubic-bezier(.16,1,.3,1);
+  --font-d:"Outfit",system-ui,sans-serif; --font-t:"Inter",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-t);-webkit-font-smoothing:antialiased}
+.pad{padding:96px clamp(16px,6vw,96px)}
+.pad h2{font-family:var(--font-d);font-size:clamp(28px,3.4vw,44px);margin:0 0 12px;letter-spacing:-.02em}
+
+/* ---------- état de base = état final, lisible sans JS et en mouvement réduit ---------- */
+.m-track{background:var(--brand);color:var(--cream)}
+.m-stage{position:relative;padding:72px clamp(16px,6vw,96px);
+  background:radial-gradient(ellipse 85% 70% at 62% 58%,#0F4454 0%,#093746 50%,#05242D 100%);
+  display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,4vw,64px);align-items:center;overflow:hidden;
+  --t:1;--e:1;--c0:1;--c1:1;--c2:1;--c3:1;--c4:1;--l1:1;--l2:1;--l3:1;--l4:1;--pg:1}
+.m-light{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 34% 32% at 64% 44%,rgba(255,255,255,.07),rgba(255,255,255,0) 70%)}
+.m-halo{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 40% 36% at 88% 8%,rgba(255,166,43,.10),rgba(255,166,43,0) 70%)}
+.m-vig{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 120% 95% at 50% 50%,rgba(0,0,0,0) 55%,rgba(0,0,0,.35) 100%)}
+.m-copy{position:relative;z-index:2;display:flex;flex-direction:column;gap:28px}
+.m-copy .kick{margin:0 0 8px;font:600 13px/1 var(--font-t);letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+.m-copy h2,.m-ch h3{font-family:var(--font-d);font-weight:600;letter-spacing:-.025em;margin:0;text-wrap:balance}
+.m-copy h2{font-size:clamp(32px,4.2vw,60px);line-height:1.02}
+.m-ch h3{font-size:clamp(24px,2.6vw,38px);line-height:1.08}
+.m-copy p.lede,.m-ch p{margin:10px 0 0;font-size:clamp(15px,1.2vw,18px);line-height:1.5;color:var(--d-muted);max-width:42ch}
+
+.m-scene{position:relative;z-index:1;height:min(70vh,640px);perspective:1400px;perspective-origin:50% 40%}
+.m-floor{position:absolute;left:10%;right:10%;top:62%;height:30%;border-radius:50%;
+  background:radial-gradient(ellipse 50% 50% at 50% 50%,rgba(255,255,255,.09),rgba(255,255,255,0) 72%);
+  transform:scale(calc(.55 + .45 * var(--e)),1);opacity:calc(.4 + .6 * var(--t))}
+.m-stack{position:absolute;left:50%;top:52%;width:clamp(180px,22vw,300px);aspect-ratio:1;transform-style:preserve-3d;
+  transform:translate(-50%,-50%) rotateX(calc(56deg * var(--t))) rotateZ(calc(-40deg * var(--t)))}
+.m-layer{position:absolute;inset:0;border-radius:22%;transform-style:preserve-3d;
+  transform:translate3d(0,0,calc(var(--z) * var(--e)))}
+.m-tile{--z:0px;background:linear-gradient(145deg,#0E4252,#083341);
+  box-shadow:0 0 0 1px rgba(255,255,255,.08) inset,0 40px 80px -30px rgba(0,0,0,.6)}
+.m-pane{border:1px solid rgba(244,241,234,calc(.22 * var(--e)));background:rgba(244,241,234,calc(.045 * var(--e)))}
+.m-flou{--z:70px}.m-dots{--z:140px}.m-cadre{--z:210px}
+/* motifs du logo, positionnés comme dans la tuile officielle */
+.sq{position:absolute;top:39%;width:22%;aspect-ratio:1;border-radius:14%;background:#fff}
+.sq-flou{left:13%;filter:blur(3px);opacity:.92}
+.dots{position:absolute;left:39%;top:49%;width:22%;display:flex;justify-content:space-between}
+.dots i{width:9%;aspect-ratio:1;border-radius:50%;background:#fff}
+.frame{position:absolute;left:64%;top:33%;width:30%;aspect-ratio:1;border:4px solid var(--accent);border-radius:16%;display:grid;place-items:center}
+.frame .sq{position:static;width:62%}
+.anchor{position:absolute;width:6px;height:6px;margin:-3px 0 0 -3px;left:94%;top:60%}
+.m-end .btn{display:inline-flex;align-items:center;min-height:48px;padding:0 20px;margin-top:18px;border-radius:10px;background:var(--accent);color:var(--ink);font:600 16px/1 var(--font-t);text-decoration:none;pointer-events:auto}
+
+/* légendes (desktop) : texte + trait qui se dessine */
+.m-callouts{display:none;position:absolute;inset:0;pointer-events:none;z-index:3}  /* sans JS : les chapitres servent de légende */
+.co{position:absolute;left:0;top:0;opacity:var(--l)}
+.co svg{position:absolute;left:0;top:0;overflow:visible}
+.co line{stroke:rgba(244,241,234,.55);stroke-width:1;stroke-dasharray:var(--len);stroke-dashoffset:calc((1 - var(--l)) * var(--len))}
+.co circle{fill:var(--accent)}
+.co span{position:absolute;white-space:nowrap;font:500 16px/1.25 var(--font-t);color:var(--cream);transform:translate(var(--lx),var(--ly))}
+.co small{display:block;font-size:13.5px;color:var(--d-muted);font-weight:400}
+.co-1{--l:var(--l1)}.co-2{--l:var(--l2)}.co-3{--l:var(--l3)}.co-4{--l:var(--l4)}
+.m-bar{position:absolute;left:0;bottom:0;height:3px;width:calc(var(--pg) * 100%);background:var(--accent)}
+.m-cue{display:none}
+
+/* ---------- mode scène : seulement si JS + mouvement autorisé + écran assez large ---------- */
+@media (prefers-reduced-motion:no-preference) and (min-width:861px){
+  .motion .m-track{height:340vh;position:relative}
+  .motion .m-stage{position:sticky;top:0;height:100vh;height:100svh;padding-block:0;
+    --t:0;--e:0;--c0:1;--c1:0;--c2:0;--c3:0;--c4:0;--c5:0;--l1:0;--l2:0;--l3:0;--l4:0;--pg:0}
+  .motion .m-copy{display:block;height:100%;position:relative}
+  .motion .m-copy > *{position:absolute;left:0;right:0;top:50%;
+    opacity:var(--c);transform:translate3d(0,calc(-50% + (1 - var(--c)) * 26px),0)}
+  .motion .m-intro{--c:var(--c0)}.motion .m-ch1{--c:var(--c1)}.motion .m-ch2{--c:var(--c2)}.motion .m-ch3{--c:var(--c3)}.motion .m-ch4{--c:var(--c4)}.motion .m-end{--c:var(--c5)}
+  .motion .m-cue{display:flex;position:absolute;left:clamp(16px,6vw,96px);bottom:24px;flex-direction:column;gap:8px;opacity:var(--c0);
+    font:500 12px/1 var(--font-t);letter-spacing:.2em;text-transform:uppercase;color:var(--d-muted)}
+  .motion .m-cue i{display:block;width:1px;height:24px;background:linear-gradient(rgba(244,241,234,.7),rgba(244,241,234,0));animation:cue 2s ease-in-out infinite;transform-origin:50% 0}
+  .motion .m-layer{will-change:transform}
+  .motion .m-callouts{display:block}
+}
+@keyframes cue{0%{transform:scaleY(0);opacity:0}30%{opacity:1}70%{transform:scaleY(1);opacity:1}100%{opacity:0}}
+@media (max-width:860px){
+  .m-stage{grid-template-columns:1fr}
+  .m-scene{height:360px}
+  .m-callouts{display:none}
+}
+</style>
+</head>
+<body>
+<section class="pad"><h2>Ce que nous proposons</h2><p>(section d'offres au-dessus — contenu factice du prototype)</p></section>
+
+<section class="m-track" aria-labelledby="m-title">
+  <div class="m-stage">
+    <div class="m-light"></div><div class="m-halo"></div>
+    <div class="m-copy">
+      <div class="m-intro"><p class="kick">La méthode EDS</p><h2 id="m-title">Du flou au cadre, en 4 temps.</h2><p class="lede">Chaque couche de notre logo correspond à une étape de votre projet IA.</p></div>
+      <div class="m-ch m-ch1"><p class="kick">01 — Diagnostiquer</p><h3>On mesure où vous en êtes.</h3><p>Diagnostic CADRE : 15 questions, un score sur 30 et un plan d'action à 30, 60 et 90 jours.</p></div>
+      <div class="m-ch m-ch2"><p class="kick">02 — Former</p><h3>Vos équipes passent du flou à la pratique.</h3><p>Formations IA en présentiel, adaptées à chaque métier.</p></div>
+      <div class="m-ch m-ch3"><p class="kick">03 — Intégrer</p><h3>L'IA entre dans vos process.</h3><p>Assistants par poste, bibliothèques de prompts, intégration dans vos outils.</p></div>
+      <div class="m-ch m-ch4"><p class="kick">04 — Automatiser</p><h3>Le cadre est posé : on automatise.</h3><p>Workflows automatisés et cellule IA externalisée.</p></div>
+      <div class="m-ch m-end"><p class="kick">Le résultat</p><h3>Une IA utile, encadrée et mesurée.</h3><p>Commencez par le diagnostic : 5 minutes, gratuit, sans inscription.</p><a class="btn" href="#">Faire le diagnostic gratuit</a></div>
+    </div>
+    <div class="m-scene" role="img" aria-label="Tuile du logo EDS décomposée en quatre couches : diagnostic, formation, intégration, automatisation.">
+      <div class="m-floor"></div>
+      <div class="m-stack">
+        <div class="m-layer m-tile"><i class="anchor" data-a="1"></i></div>
+        <div class="m-layer m-pane m-flou"><span class="sq sq-flou"></span><i class="anchor" data-a="2"></i></div>
+        <div class="m-layer m-pane m-dots"><span class="dots"><i></i><i></i><i></i><i></i><i></i></span><i class="anchor" data-a="3"></i></div>
+        <div class="m-layer m-pane m-cadre"><span class="frame"><span class="sq"></span></span><i class="anchor" data-a="4"></i></div>
+      </div>
+    </div>
+    <div class="m-callouts" aria-hidden="true">
+      <div class="co co-1"><svg width="1" height="1"><line></line><circle r="3.5"></circle></svg><span>Diagnostic CADRE<small>le point de départ</small></span></div>
+      <div class="co co-2"><svg width="1" height="1"><line></line><circle r="3.5"></circle></svg><span>Formation<small>le flou se dissipe</small></span></div>
+      <div class="co co-3"><svg width="1" height="1"><line></line><circle r="3.5"></circle></svg><span>Intégration<small>la trajectoire</small></span></div>
+      <div class="co co-4"><svg width="1" height="1"><line></line><circle r="3.5"></circle></svg><span>Automatisation<small>le cadre</small></span></div>
+    </div>
+    <div class="m-cue"><span>Défiler</span><i></i></div>
+    <div class="m-bar"></div>
+    <div class="m-vig"></div>
+  </div>
+</section>
+
+<section class="pad"><h2>Ils nous font confiance</h2><p>(section preuves en dessous — contenu factice du prototype)</p></section>
+
+<script>
+(() => {
+  const RM = matchMedia('(prefers-reduced-motion: reduce)'), WIDE = matchMedia('(min-width: 861px)');
+  if (RM.matches || !WIDE.matches) return;                 // état final statique, rien à animer
+  document.documentElement.classList.add('motion');
+  const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+  const sm = (x, a, b) => { const t = clamp((x - a) / (b - a)); return t * t * (3 - 2 * t); };
+  const io = (x, a, b, c, d) => sm(x, a, b) * (1 - sm(x, c, d));
+  const ease = (t) => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+
+  const track = document.querySelector('.m-track'), stage = document.querySelector('.m-stage');
+  const anchors = [...stage.querySelectorAll('.anchor')], cos = [...stage.querySelectorAll('.co')];
+  const endEl = stage.querySelector('.m-end');
+  const set = (n, v) => stage.style.setProperty(n, v);
+  let cur = -1, raf = 0, last = 0, visible = false, idle = 0;
+
+  function apply(P) {
+    // lectures d'abord (positions projetées de l'image précédente), écritures ensuite
+    const sr = stage.getBoundingClientRect();
+    const pts = anchors.map((a) => { const r = a.getBoundingClientRect(); return [r.left - sr.left + 3, r.top - sr.top + 3]; });
+    const turn = sm(P, .02, .16), e = ease(clamp((P - .10) / (.66 - .10)));
+    set('--t', turn.toFixed(4)); set('--e', e.toFixed(4));
+    set('--c0', (1 - sm(P, .04, .10)).toFixed(3));
+    set('--c1', io(P, .12, .17, .25, .29).toFixed(3));
+    set('--c2', io(P, .29, .34, .41, .45).toFixed(3));
+    set('--c3', io(P, .45, .50, .57, .61).toFixed(3));
+    set('--c4', io(P, .61, .66, .72, .76).toFixed(3));
+    const c5 = sm(P, .78, .84); set('--c5', c5.toFixed(3));
+    endEl.inert = c5 < .5;                                    // pas de lien focalisable tant qu'il est invisible
+    const midY = pts.reduce((s, p) => s + p[1], 0) / 4;
+    for (let i = 0; i < 4; i++) {
+      const a = .78 + i * .035, l = sm(P, a, a + .06);
+      set('--l' + (i + 1), l.toFixed(3));
+      // colonne de libellés à droite, espacés régulièrement (couche du haut = libellé du haut)
+      const [x, y] = pts[i], tx = sr.width * .82, ty = midY + (1.5 - i) * 74 - 12;
+      const len = Math.max(1, Math.hypot(tx - 12 - x, ty + 12 - y));
+      const ln = cos[i].querySelector('line'), c = cos[i].querySelector('circle');
+      ln.setAttribute('x1', tx - 12); ln.setAttribute('y1', ty + 12); ln.setAttribute('x2', x); ln.setAttribute('y2', y);
+      c.setAttribute('cx', x); c.setAttribute('cy', y);
+      cos[i].style.setProperty('--len', len.toFixed(1)); cos[i].style.setProperty('--lx', tx + 'px'); cos[i].style.setProperty('--ly', ty + 'px');
+    }
+    set('--pg', P.toFixed(4));
+  }
+  const target = () => { const len = track.offsetHeight - stage.offsetHeight; return len > 1 ? clamp(-track.getBoundingClientRect().top / len) : 0; };
+  function frame(t) {
+    const tgt = target(), dt = Math.min(.05, Math.max(.001, (t - last) / 1000)); last = t;
+    cur = cur < 0 ? tgt : cur + (tgt - cur) * (1 - Math.exp(-dt * 9));
+    if (Math.abs(tgt - cur) < 1.5e-4) cur = tgt;
+    apply(cur);
+    idle = cur === tgt ? idle + 1 : 0;                        // 2 images de plus pour recaler les légendes
+    raf = idle > 2 ? 0 : requestAnimationFrame(frame);        // puis la boucle s'endort
+  }
+  const kick = () => { if (visible && !raf) { last = performance.now(); idle = 0; raf = requestAnimationFrame(frame); } };
+  addEventListener('scroll', kick, { passive: true }); addEventListener('resize', kick);
+  new IntersectionObserver(([en]) => { visible = en.isIntersecting; kick(); }, { rootMargin: '25% 0px' }).observe(track);
+})();
+</script>
+</body>
+</html>
