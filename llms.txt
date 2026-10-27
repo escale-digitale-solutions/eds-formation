@@ -1,0 +1,22 @@
+# Escale Digitale Solutions — EDS
+
+> Formations professionnelles en intelligence artificielle et accompagnement en automatisation. Florian Rousseau, Issoudun, Centre-Val de Loire.
+
+## Pages de référence
+
+- [Formation IA à Issoudun & en Centre-Val de Loire | EDS](https://eds-formation.fr/): L’IA au service de votre vrai métier. Formations en entreprise, assistants métier et automatisation avec Florian Rousseau à Issoudun. Premier échange offert.
+- [Formations IA en entreprise à Issoudun · EDS](https://eds-formation.fr/formations/): Formations IA responsable, métier, communication et Vibe coding en Centre-Val de Loire. Apprenez en pratiquant : images, vidéos, audio et création d’outils avec l’IA.
+- [Accompagnement IA & automatisation pour PME · EDS](https://eds-formation.fr/accompagnement/): Simplifiez les tâches répétitives avec des assistants IA et des automatisations adaptés à vos outils. Cadrage, tests et prise en main avec Florian Rousseau. Sur devis.
+- [À propos & contact · Florian Rousseau · EDS](https://eds-formation.fr/a-propos/): Faites connaissance avec Florian Rousseau et contactez EDS par email, sur LinkedIn ou via Calendly. Premier échange de 30 minutes offert.
+- [Questions fréquentes sur les formations IA · EDS](https://eds-formation.fr/faq/): Niveau requis, durée, tarifs, déplacements, suivi et protection des données : les réponses pour préparer votre formation ou accompagnement IA.
+- [Sensibilisation IA en entreprise · RGPD & AI Act | EDS](https://eds-formation.fr/formations/sensibilisation-ia/): Sensibilisez vos équipes aux usages et aux risques de l’IA : données, RGPD, AI Act et premiers prompts. Dès 2 h et 300 € HT. EDS à Issoudun.
+- [Formation IA métier & automatisations simples | EDS](https://eds-formation.fr/formations/ia-metier/): Pratiquez l’IA sur vos emails, comptes rendus et documents, avec de petites automatisations simples. 8 h, dès 600 € HT par personne. EDS à Issoudun.
+- [Formation IA communication · Image, vidéo, audio | EDS](https://eds-formation.fr/formations/ia-communication/): Découvrez et pratiquez les outils IA pour vos images, vidéos, voix et textes. Formation de 8 h adaptée à votre domaine, 600 € HT par personne.
+- [Formation Vibe coding · Codex, Claude Code & GitHub | EDS](https://eds-formation.fr/formations/vibe-coding/): Apprenez à créer avec l’IA : cadrage, Codex, Claude Code, GitHub et mise en ligne. 7 h, 990 € seul ou 1 490 € à deux. Sans expérience en programmation.
+- [Quelle formation IA choisir pour votre entreprise ? | EDS](https://eds-formation.fr/guides/choisir-formation-ia-entreprise/): Sensibilisation, usages métier, communication ou Vibe coding : comparez les objectifs, les prérequis et les formats pour choisir une formation IA utile.
+
+## Contact
+
+- [À propos et contact](https://eds-formation.fr/a-propos/): email, LinkedIn et rendez-vous Calendly.
+
+Les tarifs, prérequis et conditions figurent sur chaque page de formation. Le Vibe coding enseigne une méthode ; il ne comprend pas la livraison d’un outil personnel sur mesure.
