@@ -1,0 +1,78 @@
+{
+  "source": "https://eds-formation.fr/",
+  "clients": [
+    {
+      "slug": "issoudun-immobilier",
+      "name": "Issoudun Immobilier",
+      "file": "issoudun-immobilier.png"
+    },
+    {
+      "slug": "ceterha",
+      "name": "Ceterha",
+      "file": "ceterha.png"
+    },
+    {
+      "slug": "spa-indre",
+      "name": "SPA de l’Indre",
+      "file": "spa-indre-embleme.png",
+      "alt": "Emblème utilisé par la SPA de l’Indre"
+    },
+    {
+      "slug": "alise",
+      "name": "ALISÉ",
+      "file": "alise.svg"
+    },
+    {
+      "slug": "spx-lighting",
+      "name": "SPX Lighting",
+      "file": "spx-dark.png"
+    },
+    {
+      "slug": "pb-solutions",
+      "name": "PB Solutions",
+      "file": "pb-solutions.png"
+    },
+    {
+      "slug": "444-communication",
+      "name": "444 Communication",
+      "file": "logo-444-bleu.png"
+    },
+    {
+      "slug": "oustalet",
+      "name": "Micro-crèche L’Oustalet",
+      "file": "oustalet.png"
+    },
+    {
+      "slug": "lachaud",
+      "name": "Établissements Lachaud",
+      "file": "lachaud.webp"
+    },
+    {
+      "slug": "ecofixphones",
+      "name": "ECOFIXPHONES",
+      "file": "ecofixphones.png"
+    },
+    {
+      "slug": "jilay",
+      "name": "JILAY Communication",
+      "file": "jilay-public-launch.jpg"
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "Cécile",
+      "company": "Directrice — SPA de l'Indre",
+      "quote": "« Formation vraiment bien structurée pour moi qui partais vraiment de zéro. Le formateur est patient et professionnel. Je n'ai pas vu les 6 heures passer. »"
+    },
+    {
+      "name": "Sophie K.",
+      "company": "Consultante / Formatrice RH — Ceterha",
+      "quote": "« Merci Florian pour cette formation très utile et très pratique ! Je me sens plus armée pour travailler avec les intelligences artificielles. Merci pour l'expertise que vous m'avez apportée. »"
+    },
+    {
+      "name": "Participant",
+      "company": "Collectivité publique, Centre-Val de Loire",
+      "quote": "« Une approche terrain, directement applicable. On a travaillé sur nos vrais documents et cas d'usage. Pas de théorie inutile — tout était adapté à notre secteur. »"
+    }
+  ]
+}

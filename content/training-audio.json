@@ -1,0 +1,28 @@
+{
+  "courses": {
+    "responsable": {
+      "src": null,
+      "title": "L’IA responsable, en quelques mots",
+      "duration_seconds": null,
+      "transcript": null
+    },
+    "metier": {
+      "src": null,
+      "title": "L’IA métier, en quelques mots",
+      "duration_seconds": null,
+      "transcript": null
+    },
+    "communication": {
+      "src": null,
+      "title": "L’IA communication, en quelques mots",
+      "duration_seconds": null,
+      "transcript": null
+    },
+    "vibe-coding": {
+      "src": null,
+      "title": "Le Vibe coding, en quelques mots",
+      "duration_seconds": null,
+      "transcript": null
+    }
+  }
+}
