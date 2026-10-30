@@ -43,7 +43,7 @@ def graph(data, slug, origin):
          'email':MAIL,'founder':{'@id':personid},
          'identifier':{'@type':'PropertyValue','propertyID':'SIRET','value':'94940901500011'},
          'areaServed':{'@type':'AdministrativeArea','name':'Centre-Val de Loire'},
-         'address':{'@type':'PostalAddress','streetAddress':'2 rue du Maine','addressLocality':'Issoudun','postalCode':'36100','addressRegion':'Centre-Val de Loire','addressCountry':'FR'},
+         'address':{'@type':'PostalAddress','addressLocality':'Issoudun','postalCode':'36100','addressRegion':'Centre-Val de Loire','addressCountry':'FR'},
          'contactPoint':{'@type':'ContactPoint','contactType':'Renseignements formations et accompagnement','email':MAIL,'availableLanguage':'fr','url':origin+'/a-propos/'}}
     person={'@type':'Person','@id':personid,'name':'Florian Rousseau','url':origin+'/a-propos/',
             'jobTitle':'Formateur et fondateur d’Escale Digitale Solutions','worksFor':{'@id':orgid},
